@@ -20,8 +20,8 @@
  &kp LCTRL  &kp A     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp SEMI &kp SQT
  &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                       &kp LCTRL &kp LALT                                                                                &kp LBKT  &kp RBKT
-                                                  &kp HOME   &kp UP     &kp END    &kp PG_UP &kp SCROLLLOCK &kp SPACE
-                                                  &kp LCMD   &kp SPACE  &mo 1      &kp PG_DN &kp BSPC       &kp ENTER
+                                                  &kp HOME   &kp UP     &kp END    &kp SCRL_UP   &kp SCROLLLOCK &kp SPACE
+                                                  &kp LCMD   &kp SPACE  &mo 1      &kp SCRL_DOWN &kp BSPC       &kp ENTER
             >;
         };
 
@@ -38,19 +38,6 @@
             >;
         };
 
-        Keyboard_Control_Layer {
-            bindings = <
- &trans      &trans  &trans  &trans  &trans  &trans                                     &trans         &trans           &trans          &trans          &trans          &trans
- &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4           &trans         &rgb_ug RGB_TOG  &rgb_ug RGB_EFF &trans          &trans          &trans
- &sys_reset      &trans  &trans  &trans  &trans  &studio_unlock                             &studio_unlock &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &sys_reset
- &bootloader &trans  &trans  &trans  &trans  &trans                                     &trans         &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &bootloader
- &to 4      &trans  &trans  &trans  &trans  &trans                                     &trans         &trans           &trans          &trans          &trans          &to 4
-                 &trans  &trans                                                                                         &trans          &trans
-                                         &trans  &trans &trans        &trans &trans &trans
-                                         &trans  &trans &trans        &trans &trans &trans
-            >;
-        };
-
         Auto_Mouse_Layer {
             bindings = <
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
@@ -63,19 +50,6 @@
                                          &trans  &trans &trans        &trans &trans &trans
             >;
         };
-
-        factory_test {
-            bindings = <
-&kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5            &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1
-&kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7            &kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3
-&kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9            &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7
-&kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3            &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9
-                            &kp N2  &kp N3                                                                    &kp N7  &kp N8
-                                &kp N1  &kp N2  &kp N3    &kp N4  &kp N5  &kp N6
-                                &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
-            >;
-        };
     };
 };
 
@@ -85,10 +59,6 @@
     input-processors = 
         // this gets it to the default installation orientation
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // activate layer 3 within 500ms of the trackball moving
-        <&zip_temp_layer 3 500>,
-        // This is only working when layer 1 is active
-        <&zip_if_layer_active 1 &zip_xy_scaler 1 3>,
-        <&zip_if_layer_active 1 &zip_xy_to_scroll_mapper>,
-        <&zip_if_layer_active 1 &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+        // activate layer 2 within 1000ms of the trackball moving
+        <&zip_temp_layer 2 1000>;
 };
