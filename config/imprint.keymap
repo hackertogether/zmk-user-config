@@ -62,7 +62,7 @@
 
     mo_scroll: mo_scroll {
         compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <2>;
+        #binding-cells = <1>;
         tapping-term-ms = <200>;
         bindings = <&kp SCRL_DOWN>, <&trackball_scroll>;
     };
