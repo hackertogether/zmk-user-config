@@ -61,11 +61,10 @@
     };
 
     mo_scroll: mo_scroll {
-        compatible = "zmk,behavior-hold-tap";
-        label = "MO_SCROLL";
-        flavor = "balanced";
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <2>;
         tapping-term-ms = <200>;
-        bindings = <&trackball_scroll>, <&kp SCRL_DOWN>;
+        bindings = <&kp SCRL_DOWN>, <&trackball_scroll>;
     };
 };
 
