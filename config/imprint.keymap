@@ -68,7 +68,8 @@
 
     mo_scroll_toggle: mo_scroll_toggle {
         compatible = "zmk,behavior-toggle";
-        #binding-cells = <1>;
+        label = "MO_SCROLL_TOGGLE";
+        #binding-cells = <0>;
         bindings = <&trackball_scroll>, <&trackball_mouse>;
     };
 };
