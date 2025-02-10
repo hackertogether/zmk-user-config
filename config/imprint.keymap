@@ -65,7 +65,6 @@
         label = "MO_SCROLL";
         flavor = "balanced";
         tapping-term-ms = <200>;
-        quick-tap = <true>;
         bindings = <&trackball_scroll>, <&kp SCRL_DOWN>;
     };
 };
