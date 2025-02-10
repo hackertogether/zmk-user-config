@@ -72,7 +72,7 @@
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
 
-    mo_scroll {
+    mo_scroll: mo_scroll {
         compatible = "zmk,behavior-mod-morph";
         label = "MO_SCROLL";
         bindings = <&trackball_scroll>, <&trackball_mouse>;
