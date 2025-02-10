@@ -21,7 +21,7 @@
  &kp LSHFT  &kp Z     &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                       &kp LCTRL &kp LALT                                                                                &kp LBKT  &kp RBKT
                                                   &kp HOME   &kp UP     &kp END    &kp SCRL_UP   &kp SCROLLLOCK &kp SPACE
-                                                  &kp LCMD   &kp SPACE  &mo 1      &mo_scroll    &kp BSPC       &kp ENTER
+                                                  &kp LCMD   &kp SPACE  &mo 1      &mo_scroll_toggle    &kp BSPC       &kp ENTER
             >;
         };
 
@@ -60,11 +60,10 @@
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
 
-    mo_scroll: mo_scroll {
-        compatible = "zmk,behavior-tap-dance";
+    mo_scroll_toggle: mo_scroll_toggle {
+        compatible = "zmk,behavior-toggle";
         #binding-cells = <1>;
-        tapping-term-ms = <200>;
-        bindings = <&kp SCRL_DOWN>, <&trackball_scroll>;
+        bindings = <&trackball_scroll>;
     };
 };
 
