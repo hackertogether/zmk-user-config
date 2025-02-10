@@ -52,6 +52,12 @@
         };
     };
 
+    trackball_mouse: trackball_mouse {
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+            <&zip_temp_layer 2 1000>; // Normal Mouse Mode
+    };
+
     trackball_scroll: trackball_scroll {
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
@@ -63,7 +69,7 @@
     mo_scroll_toggle: mo_scroll_toggle {
         compatible = "zmk,behavior-toggle";
         #binding-cells = <1>;
-        bindings = <&trackball_scroll>;
+        bindings = <&trackball_scroll>, <&trackball_mouse>;
     };
 };
 
