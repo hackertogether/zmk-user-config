@@ -59,7 +59,7 @@
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
         <&zip_temp_layer 2 1000>,
-        <&if-layers 2 &zip_xy_to_scroll_mapper>,
-        <&if-layers 2 &zip_xy_scaler 1 3>,
-        <&if-layers 2 &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+        <&if-layers <2> &zip_xy_to_scroll_mapper>,
+        <&if-layers <2> &zip_xy_scaler 1 3>,
+        <&if-layers <2> &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
