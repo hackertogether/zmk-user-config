@@ -51,37 +51,15 @@
             >;
         };
     };
-
-    trackball_mouse: trackball_mouse {
-        input-processors =
-            // this gets it to the default installation orientation
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            // activate layer 2 within 1000ms of the trackball moving
-            <&zip_temp_layer 2 1000>; // Normal Mouse Mode
-    };
-
-    trackball_scroll: trackball_scroll {
-        input-processors =
-            // this gets it to the default installation orientation,
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),
-            <&zip_xy_scaler 1 3>,
-            // make this trackball output scrolling events by default instead of cursor movement,
-            <&zip_xy_to_scroll_mapper>,
-            // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
-    };
-
-    mo_scroll: mo_scroll {
-        compatible = "zmk,behavior-mod-morph";
-        label = "MO_SCROLL";
-        bindings = <&trackball_scroll>, <&trackball_mouse>;
-        params = <1>;
-    };
 };
 
 //right hand trackball configuration
 
 &trackball_peripheral_listener {
-    input-processors = <&mo_scroll>;
+    input-processors =
+        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+        <&zip_temp_layer 2 1000>,
+        <&if-layers 2 &zip_xy_to_scroll_mapper>,
+        <&if-layers 2 &zip_xy_scaler 1 3>,
+        <&if-layers 2 &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
