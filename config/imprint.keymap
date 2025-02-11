@@ -59,8 +59,8 @@
  &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
                  &trans  &trans                                                                     &trans  &trans
-                                         &mkp LCLK  &trans &trans        &trans &trans &trans
                                          &trans  &trans &trans        &trans &trans &trans
+                                         &mkp LCLK  &trans &trans        &trans &trans &trans
             >;
         };
 
@@ -91,7 +91,7 @@
         layers = <1>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            <&zip_xy_scaler 1 5>,
+            <&zip_xy_scaler 1 12>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
