@@ -80,7 +80,6 @@
 //right hand trackball configuration
 
 &trackball_peripheral_listener {
-    status = "okay";
     compatible = "zmk,input-listener";
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
