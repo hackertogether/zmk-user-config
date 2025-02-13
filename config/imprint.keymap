@@ -78,16 +78,11 @@
 };
 
 //right hand trackball configuration
-&zip_button_behaviors {
-    bindings = <&none, &none, &zip_temp_layer 3 1000>;
-};
-
 &trackball_peripheral_listener {
     compatible = "zmk,input-listener";
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        <&zip_temp_layer 3 1000>,
-        <&zip_button_behaviors>;
+        <&zip_temp_layer 3 1500>;
     scroll {
         layers = <1>;
         input-processors =
