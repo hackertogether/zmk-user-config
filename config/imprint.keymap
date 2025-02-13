@@ -56,7 +56,7 @@
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &mkp MCLK  &mkp RCLK &mkp LCLK &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &mkp MCLK  &mkp RCLK &temp_layer_hold 3 1000 &mkp LCLK &trans                              &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
                  &trans  &trans                                                                     &trans  &trans
                                          &trans  &trans &trans        &trans &trans &trans
@@ -83,7 +83,7 @@
     compatible = "zmk,input-listener";
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        <&zip_temp_layer 3 500>;
+        <&zip_temp_layer 3 1000>;
     scroll {
         layers = <1>;
         input-processors =
