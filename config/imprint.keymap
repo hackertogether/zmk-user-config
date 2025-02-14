@@ -79,7 +79,7 @@
 
 &mkp_input_listener {
     input-processors = <&zip_temp_layer 3 500>;
-}
+};
 
 //right hand trackball configuration
 &trackball_peripheral_listener {
