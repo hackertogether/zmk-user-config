@@ -82,7 +82,7 @@
     compatible = "zmk,input-listener";
     input-processors =
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        <&zip_temp_layer 3 1500>;
+        <&zip_temp_layer 3 800>;
     scroll {
         layers = <1>;
         input-processors =
