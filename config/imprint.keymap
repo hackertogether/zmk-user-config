@@ -52,9 +52,6 @@
         };
 
         Auto_Mouse_Layer {
-            &mkp_input_listener {
-                input-processors = <&zip_temp_layer 3 500>;
-            };
             bindings = <
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
@@ -78,6 +75,10 @@
             >;
         };
     };
+};
+
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 3 500>;
 };
 
 //right hand trackball configuration
