@@ -46,7 +46,7 @@
 &bootloader  &trans        &trans        &trans        &trans        &trans                  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
 &to 4        &trans        &trans        &trans        &trans        &trans                  &trans  &trans           &trans           &trans           &trans           &to 4
 &to 4        &trans        &trans        &trans        &trans                                        &trans           &trans           &trans           &trans           &to 4
-                                                       &trans        &trans        &trans    &trans  &trans           &trans
+                                                       &to 0         &trans        &trans    &trans  &trans           &trans
                                                        &trans        &trans        &trans    &trans  &trans           &trans
             >;
         };
@@ -77,6 +77,8 @@
     };
 };
 
+// When a mouse click event occurs, extend the time spent on the third layer,
+// to accommodate situations where continuous clicks are needed at the same location.
 &mkp_input_listener {
     input-processors = <&zip_temp_layer 3 500>;
 };
@@ -84,7 +86,7 @@
 //right hand trackball configuration
 &trackball_peripheral_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_temp_layer 3 800>;
+    input-processors = <&zip_temp_layer 3 1000>;
     scroll {
         layers = <1>;
         input-processors =
