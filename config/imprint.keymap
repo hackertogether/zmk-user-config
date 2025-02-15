@@ -56,7 +56,7 @@
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &mkp MCLK  &mkp RCLK &sl 3 &mkp LCLK &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &trans  &mkp MCLK  &mkp RCLK &mkp LCLK &trans                              &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
                  &trans  &trans                                                                     &trans  &trans
                                          &trans  &trans &trans        &trans &trans &trans
@@ -80,13 +80,10 @@
 //right hand trackball configuration
 &trackball_peripheral_listener {
     compatible = "zmk,input-listener";
-    input-processors =
-        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        <&zip_temp_layer 3 800>;
+    input-processors = <&zip_temp_layer 3 800>;
     scroll {
         layers = <1>;
         input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
             <&zip_xy_scaler 1 25>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
