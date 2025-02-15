@@ -33,7 +33,7 @@
  &trans  &trans  &kp N4  &kp N5  &kp N6  &trans                                     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans     &trans
  &trans  &trans  &kp N1  &kp N2  &kp N3  &trans                                     &trans    &trans    &trans    &trans     &trans     &trans
                  &trans  &kp N0                                                                         &trans    &trans
-                                      &to 0   &trans &trans       &trans  &trans &trans
+                                      &trans  &trans &trans       &trans  &trans &trans
                                       &trans  &trans &trans       &trans  &trans &trans
             >;
         };
@@ -46,7 +46,7 @@
 &bootloader  &trans        &trans        &trans        &trans        &trans                  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
 &to 4        &trans        &trans        &trans        &trans        &trans                  &trans  &trans           &trans           &trans           &trans           &to 4
 &to 4        &trans        &trans        &trans        &trans                                        &trans           &trans           &trans           &trans           &to 4
-                                                       &to 0         &trans        &trans    &trans  &trans           &trans
+                                                       &trans        &trans        &trans    &trans  &trans           &trans
                                                        &trans        &trans        &trans    &trans  &trans           &trans
             >;
         };
@@ -59,7 +59,7 @@
  &trans  &trans  &mkp MCLK  &mkp RCLK &mkp LCLK &trans                              &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
                  &trans  &trans                                                                     &trans  &trans
-                                         &to 0   &trans &trans        &trans &trans &trans
+                                         &trans  &trans &trans        &trans &trans &trans
                                          &trans  &trans &trans        &trans &trans &trans
             >;
         };
@@ -75,7 +75,7 @@
 //right hand trackball configuration
 &trackball_peripheral_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_temp_layer 3 1000>;
+    input-processors = <&zip_temp_layer 3 800>;
     scroll {
         layers = <1>;
         input-processors =
