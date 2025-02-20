@@ -20,8 +20,8 @@
  &kp LSHFT  &kp Z     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp FSLH    &kp RSHFT
  &kp LCTRL  &trans    &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &trans      &kp RCTRL
                       &kp LCTRL &kp LALT                                                                                &kp LBKT  &kp RBKT
-                                                  &kp ESC    &mkp LCLK  &mkp RCLK    &mkp MB5   &kp SCROLLLOCK &kp SPACE
-                                                  &kp LCMD   &kp SPACE  &mo 1        &mkp MB4   &kp BSPC       &kp ENTER
+                                                  &kp ESC    &trans     &trans       &mkp MB5   &mkp LCLK    &mkp RCLK
+                                                  &kp LCMD   &kp SPACE  &mo 1        &mkp MB4   &kp BSPC     &kp ENTER
             >;
         };
 
