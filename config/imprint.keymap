@@ -20,8 +20,8 @@
  &kp LSHFT  &kp Z     &kp S     &kp D     &kp F   &kp G                                          &kp H       &kp J      &kp K     &kp L    &kp FSLH    &kp RSHFT
  &kp LCTRL  &trans    &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &trans      &kp RCTRL
                       &kp LCTRL &kp LALT                                                                                &kp LBKT  &kp RBKT
-                                                  &kp ESC    &kp UP     &kp END    &mkp MB5   &kp SCROLLLOCK &kp SPACE
-                                                  &kp LCMD   &kp SPACE  &mo 1      &mkp MB4   &kp BSPC       &kp ENTER
+                                                  &kp ESC    &mkp LCLK  &mkp RCLK    &mkp MB5   &kp SCROLLLOCK &kp SPACE
+                                                  &kp LCMD   &kp SPACE  &mo 1        &mkp MB4   &kp BSPC       &kp ENTER
             >;
         };
 
@@ -66,16 +66,9 @@
     };
 };
 
-// When a mouse click event occurs, extend the time spent on the third layer,
-// to accommodate situations where continuous clicks are needed at the same location.
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 3 500>;
-};
-
 //right hand trackball configuration
 &trackball_peripheral_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_temp_layer 3 800>;
     scroll {
         layers = <1>;
         input-processors =
