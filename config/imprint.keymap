@@ -21,7 +21,7 @@
  &kp LCTRL  &trans    &kp X     &kp C     &kp V   &kp B                                          &kp N       &kp M      &kp COMMA &kp DOT  &trans      &kp RCTRL
                       &kp LCTRL &kp LALT                                                                                &kp LBKT  &kp RBKT
                                                   &kp ESC    &trans     &trans       &mkp LCLK  &mkp RCLK   &mkp MB5   
-                                                  &kp LCMD   &kp SPACE  &mo 1        &mkp MB4   &kp BSPC    &kp ENTER
+                                                  &kp LCMD   &kp SPACE  &mo 1        &kp  BSPC  &mkp MB4    &kp ENTER
             >;
         };
 
