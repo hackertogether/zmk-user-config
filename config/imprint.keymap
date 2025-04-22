@@ -1,4 +1,6 @@
-#define PMW33XX_CPI 5000
+#define PMW33XX_CPI 1200
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -10,6 +12,19 @@
 / {
     chosen { zmk,matrix-transform = &imprint_function_row;
     };
+    
+    // 添加鼠标行为配置
+    behaviors {
+        mmv: mouse_move {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <200>; 
+            acceleration-exponent = <1>; 
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
